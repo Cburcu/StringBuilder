@@ -10,7 +10,7 @@ namespace HwStringBuilder
     {
         public static int Id { get; set; }
         public string MachineName { get; set; }
-        public static string CountryName { get; set; }
+        public string CountryName { get; set; }
 
         public Machines(int id,string name, string country)
         {

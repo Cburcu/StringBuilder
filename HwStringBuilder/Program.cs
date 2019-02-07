@@ -73,7 +73,7 @@ namespace HwStringBuilder
             Random rand = new Random();
             var countries = Countries.GetCountries();
 
-            Machines[] machine = new Machines[]
+            Machines[] machines = new Machines[]
             {
                 new Machines(1, "Machine1", countries[rand.Next(countries.Count)]),
                 new Machines(2, "Machine2", countries[rand.Next(countries.Count)]),
@@ -81,6 +81,11 @@ namespace HwStringBuilder
                 new Machines(4, "Machine4", countries[rand.Next(countries.Count)]),
                 new Machines(5, "Machine5", countries[rand.Next(countries.Count)])
             };
+
+            foreach (var machine in machines)
+            {
+                Console.WriteLine($"{machine.MachineName} => {machine.CountryName}");
+            }
 
             Console.ReadLine();
         }
