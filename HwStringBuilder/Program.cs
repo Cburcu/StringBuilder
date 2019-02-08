@@ -73,14 +73,25 @@ namespace HwStringBuilder
             Random rand = new Random();
             var countries = Countries.GetCountries();
 
-            Machines[] machines = new Machines[]
+            //Machines[] machines = new Machines[]
+            //{
+            //    new Machines(1, "Machine1", countries[rand.Next(countries.Count)]),
+            //    new Machines(2, "Machine2", countries[rand.Next(countries.Count)]),
+            //    new Machines(3, "Machine3", countries[rand.Next(countries.Count)]),
+            //    new Machines(4, "Machine4", countries[rand.Next(countries.Count)]),
+            //    new Machines(5, "Machine5", countries[rand.Next(countries.Count)])
+            //};
+
+            // herhangi bir makinaya countryName eklediğinde o countryName listeden çıkmalı
+
+            Machines[] machines = new Machines[5];
+            for (var m = 0; m < 5; m++)
             {
-                new Machines(1, "Machine1", countries[rand.Next(countries.Count)]),
-                new Machines(2, "Machine2", countries[rand.Next(countries.Count)]),
-                new Machines(3, "Machine3", countries[rand.Next(countries.Count)]),
-                new Machines(4, "Machine4", countries[rand.Next(countries.Count)]),
-                new Machines(5, "Machine5", countries[rand.Next(countries.Count)])
-            };
+                int index = rand.Next(countries.Count);
+                string countryName = countries[index];
+                machines[m] = new Machines(1, $"Machine{countryName}", countryName);
+                countries.Remove(countryName);
+            }
 
             foreach (var machine in machines)
             {
