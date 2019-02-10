@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HwStringBuilder
 {
@@ -69,34 +63,44 @@ namespace HwStringBuilder
             //response.Close();
             #endregion
 
-            Dictionary<Machines, string> MachineCity = new Dictionary<Machines, string>();
-            Random rand = new Random();
-            var countries = Countries.GetCountries();
+            #region Machine Example
 
-            //Machines[] machines = new Machines[]
+            //Dictionary<Machines, string> MachineCity = new Dictionary<Machines, string>();
+            //Random rand = new Random();
+            //var countries = Countries.GetCountries();
+
+            ////Machines[] machines = new Machines[]
+            ////{
+            ////    new Machines(1, "Machine1", countries[rand.Next(countries.Count)]),
+            ////    new Machines(2, "Machine2", countries[rand.Next(countries.Count)]),
+            ////    new Machines(3, "Machine3", countries[rand.Next(countries.Count)]),
+            ////    new Machines(4, "Machine4", countries[rand.Next(countries.Count)]),
+            ////    new Machines(5, "Machine5", countries[rand.Next(countries.Count)])
+            ////};
+
+            //// herhangi bir makinaya countryName eklediğinde o countryName listeden çıkmalı
+
+            //Machines[] machines = new Machines[5];
+            //for (var m = 0; m < 5; m++)
             //{
-            //    new Machines(1, "Machine1", countries[rand.Next(countries.Count)]),
-            //    new Machines(2, "Machine2", countries[rand.Next(countries.Count)]),
-            //    new Machines(3, "Machine3", countries[rand.Next(countries.Count)]),
-            //    new Machines(4, "Machine4", countries[rand.Next(countries.Count)]),
-            //    new Machines(5, "Machine5", countries[rand.Next(countries.Count)])
-            //};
+            //    int index = rand.Next(countries.Count);
+            //    string countryName = countries[index];
+            //    machines[m] = new Machines(1, $"Machine{countryName}", countryName);
+            //    countries.Remove(countryName);
+            //}
 
-            // herhangi bir makinaya countryName eklediğinde o countryName listeden çıkmalı
+            //foreach (var machine in machines)
+            //{
+            //    Console.WriteLine($"{machine.MachineName} => {machine.CountryName}");
+            //}
 
-            Machines[] machines = new Machines[5];
-            for (var m = 0; m < 5; m++)
-            {
-                int index = rand.Next(countries.Count);
-                string countryName = countries[index];
-                machines[m] = new Machines(1, $"Machine{countryName}", countryName);
-                countries.Remove(countryName);
-            }
+            #endregion
 
-            foreach (var machine in machines)
-            {
-                Console.WriteLine($"{machine.MachineName} => {machine.CountryName}");
-            }
+
+
+            Container container = CreateContainer.GetContainer();
+
+            Console.WriteLine($"{container.CountryName} - {container.IsLoaded}");
 
             Console.ReadLine();
         }

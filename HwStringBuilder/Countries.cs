@@ -23,5 +23,16 @@ namespace HwStringBuilder
 
             return countries;
         }
+
+        public static Country GetCountryName()
+        {
+            Country country = new Country();
+            Random rand = new Random();
+            var countries = Countries.GetCountries();
+            int index = rand.Next(0, 250);
+            country.Name = countries[index];
+            country.Status = 0;
+            return country;
+        }
     }
 }
