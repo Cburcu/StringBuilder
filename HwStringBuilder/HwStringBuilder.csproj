@@ -45,12 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContainerNameIsNullException.cs" />
     <Compile Include="CreateContainer.cs" />
-    <Compile Include="Ex\Category.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="Countries.cs" />
     <Compile Include="Country.cs" />
-    <Compile Include="Ex\Machines.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

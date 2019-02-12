@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HwStringBuilder
 {
@@ -24,15 +21,19 @@ namespace HwStringBuilder
             return countries;
         }
 
-        public static Country GetCountryName()
+        public static List<Country> CountriesStatus()
         {
-            Country country = new Country();
-            Random rand = new Random();
+            List<Country> countriesStatus = new List<Country>();
             var countries = Countries.GetCountries();
-            int index = rand.Next(0, 250);
-            country.Name = countries[index];
-            country.Status = 0;
-            return country;
+            foreach (var country in countries)
+            {
+                Country cntry = new Country();
+                cntry.Name = country;
+                cntry.Status = 0;
+                countriesStatus.Add(cntry);
+            }
+
+            return countriesStatus;
         }
     }
 }

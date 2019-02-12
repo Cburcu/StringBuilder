@@ -63,44 +63,13 @@ namespace HwStringBuilder
             //response.Close();
             #endregion
 
-            #region Machine Example
+            var countries = Countries.CountriesStatus();
 
-            //Dictionary<Machines, string> MachineCity = new Dictionary<Machines, string>();
-            //Random rand = new Random();
-            //var countries = Countries.GetCountries();
+            Container container1 = CreateContainer.GetContainer(countries);
+            Container container2 = CreateContainer.GetContainer(countries);
 
-            ////Machines[] machines = new Machines[]
-            ////{
-            ////    new Machines(1, "Machine1", countries[rand.Next(countries.Count)]),
-            ////    new Machines(2, "Machine2", countries[rand.Next(countries.Count)]),
-            ////    new Machines(3, "Machine3", countries[rand.Next(countries.Count)]),
-            ////    new Machines(4, "Machine4", countries[rand.Next(countries.Count)]),
-            ////    new Machines(5, "Machine5", countries[rand.Next(countries.Count)])
-            ////};
-
-            //// herhangi bir makinaya countryName eklediğinde o countryName listeden çıkmalı
-
-            //Machines[] machines = new Machines[5];
-            //for (var m = 0; m < 5; m++)
-            //{
-            //    int index = rand.Next(countries.Count);
-            //    string countryName = countries[index];
-            //    machines[m] = new Machines(1, $"Machine{countryName}", countryName);
-            //    countries.Remove(countryName);
-            //}
-
-            //foreach (var machine in machines)
-            //{
-            //    Console.WriteLine($"{machine.MachineName} => {machine.CountryName}");
-            //}
-
-            #endregion
-
-
-
-            Container container = CreateContainer.GetContainer();
-
-            Console.WriteLine($"{container.CountryName} - {container.IsLoaded}");
+            Console.WriteLine($"{container1.CountryName} - {container1.IsLoaded}");
+            Console.WriteLine($"{container2.CountryName} - {container2.IsLoaded}");
 
             Console.ReadLine();
         }
