@@ -1,13 +1,14 @@
 ﻿using System;
+using HwStringBuilder.Exceptions;
 
-namespace HwStringBuilder
+namespace HwStringBuilder.Model
 {
     public class Container
     {
         private string _name;
         public int Id { get; set; }
 
-        public string CountryName
+        public string Name
         {
             get { return _name; }
             set {

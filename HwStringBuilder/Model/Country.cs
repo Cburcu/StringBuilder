@@ -1,4 +1,4 @@
-﻿namespace HwStringBuilder
+﻿namespace HwStringBuilder.Model
 {
     public class Country
     {

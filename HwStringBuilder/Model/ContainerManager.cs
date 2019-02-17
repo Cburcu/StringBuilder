@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HwStringBuilder
+namespace HwStringBuilder.Model
 {
-    public class CreateContainer
+    public class ContainerManager
     {
-        public static Container GetContainer(List<Country> countries)
+        public static Container Get(List<Country> countries)
         {
             Container container = new Container();
             Random random = new Random();
@@ -18,13 +18,13 @@ namespace HwStringBuilder
             {
                 if (country.Status != 1)
                 {
-                    container.CountryName = country.Name;
+                    container.Name = country.Name;
                     country.Status = 1;
                     container.IsLoaded = 1;
                 }
                 else
                 {
-                    container.CountryName = string.Empty;
+                    container.Name = string.Empty;
                 }
             }
             catch (Exception e)

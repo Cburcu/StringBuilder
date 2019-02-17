@@ -1,4 +1,5 @@
 ﻿using System;
+using HwStringBuilder.Model;
 
 namespace HwStringBuilder
 {
@@ -65,11 +66,11 @@ namespace HwStringBuilder
 
             var countries = Countries.CountriesStatus();
 
-            Container container1 = CreateContainer.GetContainer(countries);
-            Container container2 = CreateContainer.GetContainer(countries);
+            Container container1 = ContainerManager.Get(countries);
+            Container container2 = ContainerManager.Get(countries);
 
-            Console.WriteLine($"{container1.CountryName} - {container1.IsLoaded}");
-            Console.WriteLine($"{container2.CountryName} - {container2.IsLoaded}");
+            Console.WriteLine($"{container1.Name} - {container1.IsLoaded}");
+            Console.WriteLine($"{container2.Name} - {container2.IsLoaded}");
 
             Console.ReadLine();
         }

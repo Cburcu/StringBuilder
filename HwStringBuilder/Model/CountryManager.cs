@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace HwStringBuilder
+namespace HwStringBuilder.Model
 {
-    public class Countries
+    public class CountryManager
     {
         public static List<string> GetCountries()
         {
             List<string> countries = new List<string>();
 
-            var readCountriesFile = File.ReadAllLines("Countries.txt");
+            var readCountriesFile = File.ReadAllLines("Countries.txt"); //TODO: Konfigurasyon dosyasından alalım
 
             foreach (var c in readCountriesFile)
             {
