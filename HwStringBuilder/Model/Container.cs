@@ -1,6 +1,7 @@
-﻿using System;
+﻿using HwStringBuilder.Exceptions;
+using System;
 
-namespace HwStringBuilder
+namespace HwStringBuilder.Model
 {
     public class Container
     {

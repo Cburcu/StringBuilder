@@ -45,11 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContainerNameIsNullException.cs" />
-    <Compile Include="CreateContainer.cs" />
-    <Compile Include="Container.cs" />
-    <Compile Include="Countries.cs" />
-    <Compile Include="Country.cs" />
+    <Compile Include="Exception\ContainerNameIsNullException.cs" />
+    <Compile Include="Model\CountryManager.cs" />
+    <Compile Include="Model\ContainerManager.cs" />
+    <Compile Include="Model\Container.cs" />
+    <Compile Include="Model\Countries.cs" />
+    <Compile Include="Model\Country.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,7 +58,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Countries.txt" />
+    <Content Include="Db\Countries.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
