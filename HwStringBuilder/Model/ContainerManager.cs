@@ -13,7 +13,7 @@ namespace HwStringBuilder.Model
 
             int index = random.Next(0, 250);
 
-            Country country = countryFactory.GetCountry(2);
+            Country country = countryFactory.GetCountry(index);
             var status = countryFactory.GetCurrentStatus(country.Name);
             try
             {
@@ -21,8 +21,7 @@ namespace HwStringBuilder.Model
                 {
                     container.CountryName = country.Name;
                     container.IsLoaded = 1;
-                    country.Status = 1;
-                    //countryFactory.ActivateCountry(2);
+                    countryFactory.ActivateCountry(country.Name);
                 }
                 else
                 {

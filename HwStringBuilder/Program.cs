@@ -24,17 +24,6 @@ namespace HwStringBuilder
                 Console.WriteLine(e.Message);
             }
 
-            try
-            {
-                Container container1 = ContainerManager.GetContainer(countryFactory);
-                Console.WriteLine($"{container1.CountryName} - {container1.IsLoaded}");
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
             Console.ReadLine();
         }
     }
